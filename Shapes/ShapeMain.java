@@ -8,10 +8,13 @@ public class ShapeMain {
 
         Scanner sc = new Scanner(System.in);
 
+        // ── TASK 1 ────────────────────────────────────────────
         int n = sc.nextInt();
 
+        // ── TASK 2 ────────────────────────────────────────────
         Shape[] shapes = new Shape[n];
 
+        // ── TASK 3 ────────────────────────────────────────────
         for (int i = 0; i < n; i++) {
             String type    = sc.next();
             String color   = sc.next();
@@ -28,22 +31,29 @@ public class ShapeMain {
             }
         }
 
+        // ── TASK 4 ────────────────────────────────────────────
         for (Shape s : shapes) {
             System.out.println(s);
             System.out.println();
         }
 
+        // ── TASK 5 — Downcasting ─────────────────────────────
         System.out.println("--- Downcast Check ---");
         for (Shape s : shapes) {
             if (s instanceof Rectangle) {
                 Rectangle r = (Rectangle) s;
-                System.out.println("Rectangle width=" + r.getWidth() + " length=" + r.getLength());
+                System.out.println("Rectangle width="  + r.getWidth()
+                        + " length=" + r.getLength());
             } else if (s instanceof Circle) {
                 Circle c = (Circle) s;
                 System.out.println("Circle radius=" + c.getRadius());
             }
         }
 
+        // ── TASK 6 — Abstract class (written answer) ──────────
+        // What error does the compiler give if you write:
+        //     Shape s = new Shape("Red", true);
+        //
         // ANSWER: error: Shape is abstract; cannot be instantiated
 
         sc.close();
